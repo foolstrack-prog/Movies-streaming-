@@ -3,49 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Movie Stream</title>
+    <title>CINEPHILER</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="navbar">
-        <a href="#" class="logo">StreamFlix</a>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">TV Shows</a></li>
-                <li><a href="#">Search</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="mobile-header">
+        <i class="fa-solid fa-bars menu-icon"></i>
+        <div class="header-logo">CINEPHILER</div>
+        </header>
 
     <main class="container">
-        <h2>Trending Now</h2>
-        <div class="movie-grid">
-            <div class="movie-card" onclick="playMovie('movie1')">
-                <img src="placeholder_movie1.jpg" alt="Movie Title 1">
-                <div class="movie-info">
-                    <h3>Movie Title 1</h3>
-                    <p>Action/Adventure</p>
-                    <span class="rating">⭐️ 8.5</span>
-                </div>
-            </div>
+        <section class="welcome-section">
+            <p class="welcome-text">Welcome back, **Dilhara!**</p>
+            <p class="subtitle">Review or log film you've watched...</p>
+        </section>
 
-            <div class="movie-card" onclick="playMovie('movie2')">
-                <img src="placeholder_movie2.jpg" alt="Movie Title 2">
-                <div class="movie-info">
-                    <h3>Movie Title 2</h3>
-                    <p>Sci-Fi/Thriller</p>
-                    <span class="rating">⭐️ 7.9</span>
+        <section class="movie-section">
+            <h2>New Releases</h2>
+            <div class="movie-scroll-list">
+                <div class="movie-card vertical-card" onclick="playMovie('the_boy_and_the_heron')">
+                    <img src="placeholder_the_boy_and_the_heron.jpg" alt="The Boy and the Heron">
+                    <h3>The Boy and th...</h3>
                 </div>
-            </div>
+                <div class="movie-card vertical-card" onclick="playMovie('inside_out_2')">
+                    <img src="placeholder_inside_out_2.jpg" alt="Inside Out 2">
+                    <h3>Inside Out 2</h3>
+                </div>
+                <div class="movie-card vertical-card" onclick="playMovie('furiosa')">
+                    <img src="placeholder_furiosa.jpg" alt="Furiosa: A M...">
+                    <h3>Furiosa: A M...</h3>
+                </div>
+                </div>
+        </section>
 
-            </div>
+        <section class="movie-section">
+            <h2>Upcoming movies</h2>
+            <div class="movie-scroll-list">
+                <div class="movie-card upcoming-card" onclick="playMovie('deadpool')">
+                    <img src="placeholder_deadpool.jpg" alt="Deadpool & Wolverine">
+                    <h3>Deadpool & Wol...</h3>
+                    <p class="release-date">Jul 24, 2024</p>
+                </div>
+                <div class="movie-card upcoming-card" onclick="playMovie('despicable_me_4')">
+                    <img src="placeholder_despicable_me_4.jpg" alt="Despicable Me 4">
+                    <h3>Despicable Me 4</h3>
+                    <p class="release-date">Jun 20, 2024</p>
+                </div>
+                <div class="movie-card upcoming-card" onclick="playMovie('a_quiet_place')">
+                    <img src="placeholder_a_quiet_place.jpg" alt="A Quiet Place: Day One">
+                    <h3>A Quiet Plac...</h3>
+                    <p class="release-date">Jun 26, 2024</p>
+                </div>
+                </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 StreamFlix. All rights reserved.</p>
-    </footer>
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Search</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fa-solid fa-bookmark"></i>
+            <span>Wishlist</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
 
     <script src="script.js"></script>
 </body>
