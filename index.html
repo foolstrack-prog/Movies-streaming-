@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie Stream</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="#" class="logo">StreamFlix</a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Trending Now</h2>
+        <div class="movie-grid">
+            <div class="movie-card" onclick="playMovie('movie1')">
+                <img src="placeholder_movie1.jpg" alt="Movie Title 1">
+                <div class="movie-info">
+                    <h3>Movie Title 1</h3>
+                    <p>Action/Adventure</p>
+                    <span class="rating">⭐️ 8.5</span>
+                </div>
+            </div>
+
+            <div class="movie-card" onclick="playMovie('movie2')">
+                <img src="placeholder_movie2.jpg" alt="Movie Title 2">
+                <div class="movie-info">
+                    <h3>Movie Title 2</h3>
+                    <p>Sci-Fi/Thriller</p>
+                    <span class="rating">⭐️ 7.9</span>
+                </div>
+            </div>
+
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 StreamFlix. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
