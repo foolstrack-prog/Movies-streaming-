@@ -8,16 +8,43 @@
 }
 
 body {
-    background-color: #121212; /* Very dark background */
+    background-color: #0d0d0d; /* Darker body for the surrounding area */
+    display: flex; /* Flexbox to center the UI container */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
     color: #f0f0f0; /* Light text */
     line-height: 1.4;
-    padding-bottom: 60px; /* Space for the fixed bottom nav */
+    padding: 20px; /* Some padding around the phone view */
 }
+
+/* --- 9:16 Mobile Simulator Container --- */
+.mobile-view-wrapper {
+    /* Define the 9:16 aspect ratio */
+    width: 360px; /* Example width for a modern mobile screen (e.g., 360px) */
+    height: 640px; /* 360 * 16 / 9 = 640px (Perfect 9:16 ratio) */
+    background-color: #121212; /* Very dark background for the 'screen' */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Shadow for phone look */
+    border-radius: 20px; /* Rounded corners for the screen */
+    overflow-y: scroll; /* Allow scrolling within the phone view */
+    position: relative; /* Context for fixed elements */
+
+    /* Hide scrollbar for a cleaner look (optional) */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.mobile-view-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
 
 .container {
     padding: 0 15px; /* Standard mobile padding */
-    max-width: 600px; /* Max width for a mobile view */
+    max-width: none; /* Override original max-width to use wrapper's width */
     margin: 0 auto;
+    /* The padding-bottom here needs to account for the fixed bottom-nav */
+    padding-bottom: 60px;
 }
 
 /* --- Top Mobile Header --- */
@@ -29,6 +56,9 @@ body {
     background-color: #121212;
     color: #f0f0f0;
     font-weight: bold;
+    position: sticky; /* Keep header visible at the top of the scrollable area */
+    top: 0;
+    z-index: 10;
 }
 
 .menu-icon {
@@ -130,10 +160,11 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
+    position: absolute; /* Changed from fixed to absolute, relative to .mobile-view-wrapper */
     bottom: 0;
     left: 0;
     right: 0;
+    width: 100%; /* Ensure it spans the wrapper's width */
     height: 60px;
     background-color: #202020; /* Slightly lighter than body for contrast */
     border-top: 1px solid #333;
