@@ -12,14 +12,29 @@
         <header class="mobile-header">
             <i class="fa-solid fa-bars menu-icon"></i>
             <div class="header-logo">CINEPHILER</div>
-            </header>
+            <i class="fa-solid fa-cloud-arrow-up admin-toggle-icon" onclick="toggleAdminPanel()"></i> </header>
 
         <main class="container">
+            <section id="admin-panel" class="admin-panel" style="display: none;">
+                <h2>🎬 Admin Video Uploader</h2>
+                <form id="upload-form">
+                    <input type="text" id="movie-title" placeholder="Movie Title" required>
+                    <input type="url" id="poster-url" placeholder="Poster Image URL (e.g., placeholder.jpg)" required>
+                    <input type="url" id="video-url" placeholder="Video Link (e.g., Google Drive Share Link)" required>
+                    <button type="submit">Add New Movie</button>
+                </form>
+                <p class="warning-text">**Note:** We will attempt to stream Google Drive links, but success is not guaranteed.</p>
+            </section>
             <section class="welcome-section">
                 <p class="welcome-text">Welcome back, **Dilhara!**</p>
                 <p class="subtitle">Review or log film you've watched...</p>
             </section>
 
+            <section class="movie-section" id="admin-uploads-section" style="display: none;">
+                <h2>Admin Uploads</h2>
+                <div class="movie-scroll-list" id="admin-uploads-list">
+                    </div>
+            </section>
             <section class="movie-section">
                 <h2>New Releases</h2>
                 <div class="movie-scroll-list">
