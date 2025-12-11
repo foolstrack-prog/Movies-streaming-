@@ -1,6 +1,5 @@
 /**
- * Note: This is JavaScript, not Java.
- * This file handles interactivity, admin panel logic, and video streaming attempts.
+ * Note: This file handles interactivity, admin panel logic, and video streaming attempts.
  */
 
 // Helper function to try and convert a standard Google Drive sharing link
@@ -16,14 +15,14 @@ function getDirectDriveUrl(driveUrl) {
         return `https://drive.google.com/uc?export=download&id=${fileId}`;
     }
 
-    // 2. If it's already a direct video link (e.g., from AWS, or a converted Drive link), return it as is.
+    // 2. If it's already a direct video link, return it as is.
     return driveUrl;
 }
 
 
 // Modified playMovie function
 function playMovie(movieData) {
-    // Check if movieData is an object (from Admin Uploads) or just an ID string (from hardcoded list)
+    // Determine the video URL and title based on whether movieData is an object (admin upload) or string (hardcoded)
     let videoUrl = (typeof movieData === 'object' && movieData !== null) ? movieData.videoUrl : movieData;
     let movieTitle = (typeof movieData === 'object' && movieData !== null) ? movieData.title : movieData.toUpperCase();
     
@@ -36,6 +35,7 @@ function playMovie(movieData) {
     // --- STREAMING LOGIC ---
     
     if (streamUrl.includes('drive.google.com/uc')) {
+        // This generates the alert box seen in your screenshot.
         const confirmStreaming = confirm(
             `You are attempting to stream: ${movieTitle}.\n\n` +
             `This uses the Google Drive workaround, which may fail or require a Google login.\n\n` +
