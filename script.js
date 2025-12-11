@@ -1,6 +1,6 @@
 /**
  * Note: This is JavaScript, not Java.
- * This file handles interactivity and the admin upload logic.
+ * This file handles interactivity, admin panel logic, and video streaming attempts.
  */
 
 // Helper function to try and convert a standard Google Drive sharing link

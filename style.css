@@ -72,7 +72,7 @@ body {
     color: #f38f00; /* Use an accent color from the image */
 }
 
-/* --- Admin Panel Styling --- */
+/* --- Admin Panel Styling ADDED BACK --- */
 .admin-toggle-icon {
     font-size: 1.5em;
     color: #f38f00; /* Accent color */
@@ -127,6 +127,7 @@ body {
     color: #e74c3c;
     margin-top: 10px;
 }
+/* --- END Admin Panel Styling --- */
 
 
 /* --- Welcome Section --- */
